@@ -137,6 +137,17 @@ export const grokChatSessionAnchorSchema = z.object({
 });
 export type GrokChatSessionAnchor = z.infer<typeof grokChatSessionAnchorSchema>;
 
+// Qwen (ACP) resumes at session granularity only — `session/load` reloads the
+// whole ACP session, with no per-message truncation/fork point — so the anchor
+// carries just the ACP session id. `sessionId` is that ACP session id.
+export const qwenChatSessionAnchorSchema = z.object({
+  harnessId: z.literal("qwen"),
+  hostId: z.string(),
+  sessionId: z.string(),
+  sessionWorkspaceSnapshot: sessionWorkspaceSnapshotSchema,
+  createdAt: z.number(),
+});
+export type QwenChatSessionAnchor = z.infer<typeof qwenChatSessionAnchorSchema>;
 // Kiro (ACP) resumes at session granularity only — `session/load` reloads the
 // whole ACP session, with no per-message truncation/fork point.
 export const kiroChatSessionAnchorSchema = z.object({
@@ -203,6 +214,7 @@ export const chatSessionAnchorSchema = z.discriminatedUnion("harnessId", [
   cursorChatSessionAnchorSchema,
   traycerChatSessionAnchorSchema,
   grokChatSessionAnchorSchema,
+  qwenChatSessionAnchorSchema,
   kiroChatSessionAnchorSchema,
   droidChatSessionAnchorSchema,
   kimiChatSessionAnchorSchema,

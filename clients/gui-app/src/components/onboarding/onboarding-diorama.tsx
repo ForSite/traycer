@@ -350,6 +350,12 @@ const PROVIDERS: ReadonlyArray<{
     capabilities: ["gui"],
   },
   {
+    harnessId: "qwen",
+    label: "Qwen Code",
+    status: "API key / OAuth",
+    capabilities: ["gui"],
+  },
+  {
     harnessId: "kiro",
     label: "Kiro",
     status: "Kiro login / API key",

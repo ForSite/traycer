@@ -71,6 +71,7 @@ describe("post-v1.0 GUI harness non-breaking v2→v1 downgrade bridges", () => {
       harnesses: [
         harnessOption("claude"),
         harnessOption("grok"),
+        harnessOption("qwen"),
         harnessOption("kiro"),
         harnessOption("kimi"),
         harnessOption("droid"),
@@ -101,6 +102,7 @@ describe("post-v1.0 GUI harness non-breaking v2→v1 downgrade bridges", () => {
       providers: [
         providerState("cursor"),
         providerState("grok"),
+        providerState("qwen"),
         providerState("kiro"),
         providerState("kimi"),
         providerState("droid"),
@@ -128,6 +130,7 @@ describe("post-v1.0 GUI harness non-breaking v2→v1 downgrade bridges", () => {
       agents: [
         agentSummary("a-claude", "claude"),
         agentSummary("a-grok", "grok"),
+        agentSummary("a-qwen", "qwen"),
         agentSummary("a-kiro", "kiro"),
         agentSummary("a-kilocode", "kilocode"),
         agentSummary("a-kimi", "kimi"),

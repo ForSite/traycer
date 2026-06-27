@@ -63,6 +63,7 @@ export const guiHarnessIdSchema = z.enum([
   "traycer",
   "cursor",
   "grok",
+  "qwen",
   "kiro",
   "droid",
   "kimi",
